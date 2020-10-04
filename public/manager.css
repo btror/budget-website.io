@@ -31,13 +31,14 @@ body {
 
 #container-title {
     font-family: "Arial Black", Gadget, sans-serif;
-    color: rgb(31, 31, 31);
+    color: #f0f0f0;
     margin-top: 30px;
     margin-bottom: 30px;
+    margin-left: 20px;
 }
 
 .container {
-    background: red;
+    background: rgb(31, 31, 31);
     margin-top: 30px;
 }
 
@@ -48,23 +49,53 @@ body {
 .chart-info {
     width: 400px;
     height: 400px;
-    background: green;
+    background: rgb(31, 31, 31);
     margin-bottom: 25px;
 }
 
 .chart-details {
     width: 400px;
     height: 300px;
-    background: blue;
-    padding-top: 15px;
+    background: rgb(31, 31, 31);
+    padding-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
 }
 
+.chart-details h4 {
+    color: #f0f0f0;
+}
+
 .fill-out-holder {
-    width: 740px;
+    width: 720px;
     height: 700px;
-    background: pink;
-    margin-bottom: 25px;
+    background: #36ac4d;
+    margin-bottom: 35px;
     float: left;
+}
+
+.user-input {
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+.user-input #income {
+    float: left;
+    margin-left: 22px;
+    color: rgb(31, 31, 31);
+    font-family: "Verdana", Geneva, sans-serif;
+}
+
+.user-input #monthly-expenses {
+    float: left;
+    margin-left: 22px;
+    color: rgb(31, 31, 31);
+    font-family: "Verdana", Geneva, sans-serif;
+}
+
+.user-input #savings {
+    float: left;
+    margin-left: 22px;
+    color: rgb(31, 31, 31);
+    font-family: "Verdana", Geneva, sans-serif;
 }
