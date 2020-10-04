@@ -11,7 +11,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="manager.css" />
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -34,44 +34,70 @@
       </div>
     </nav>
 
-    <div class="container" id="calculator-content" style="background: red">
-      <h1>Budget Calculator</h1>
-      <div class="row">
-        <div class="col-sm-6">
-          <h3>Save money</h3>
-          <h4>
-            Our users have saved tons of money by creating personalized budgets
-            on our website. People have saved thousands of dollars because of
-            professional money management and budgeting. Our website is a free
-            to use public utility that helps professionals and regular people
-            manage their budgets. Sign up to save your budget profiles and track
-            how much money you saved!
-          </h4>
+    <div class="container">
+      <h1 id="container-title">Budget Calculator</h1>
+      <div class="canvas-holder">
+        <div class="chart-details">
+          <h4>Monthly Income: </h4>
+          <hr style="width: 100%">
+          <h4>Housing: </h4>
+          <h4>Transportation: </h4>
+          <h4>Education: </h4>
+          <h4>Personal: </h4>
+          <h4>Savings: </h4>
+          <hr style="width: 100%">
+          <h4>Monthly expenses: </h4>
         </div>
-        <div class="col-sm-6" id="stock-img-holder">
-          <div class="stock-holder-1"></div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-6" id="stock-img-holder">
-          <div class="stock-holder-2"></div>
-        </div>
-        <div class="col-sm-6">
-          <h3>Learn budgeting</h3>
-          <h4>
-            On top of saving money and organizing your finances, our website
-            provides powerful free tools that will enhance your understanding
-            about creating efficient budgets and saving money. Using this
-            website helps users understand how to manage and track personalized
-            budgets.
-          </h4>
+        <div class="chart-info">
+          <canvas id="myChart" width="100" height="100"></canvas>
         </div>
       </div>
+      <div class="fill-out-holder"></div>
     </div>
 
-    <div class="footer">
-      <p>Author: Brandon Rorie</p>
-    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"
+      integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+      integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var dataSource = {
+        datasets: [
+          {
+            data: [200, 300, 440],
+            backgroundColor: ["#ffcd56", "#ff6384", "#36a2eb", "#fd6b19"],
+          },
+        ],
+        labels: ["cars", "house", "other"],
+      };
+
+      function createChart() {
+        var ctx = document.getElementById("myChart").getContext("2d");
+        var myPieChart = new Chart(ctx, {
+          type: "pie",
+          data: dataSource,
+        });
+      }
+
+      createChart();
+
+      // function getBudget() {
+      //     axios.get('http://localhost:3000/budget')
+      //     .then(function (res) {
+      //         for (var i = 0; i < res.data.myBudget.length; i++) {
+      //             dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
+      //             dataSource.labels[i] = res.data.myBudget[i].title;
+      //             createChart();
+      //         }
+      //     });
+      // }
+
+      //getBudget();
+    </script>
   </body>
 </html>

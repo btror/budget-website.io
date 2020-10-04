@@ -1,0 +1,70 @@
+
+body {
+    background: #f0f0f0;
+}
+
+#menubar {
+    position: relative;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#navbar .active a{
+    background: #36ac4d;
+    color: rgb(31, 31, 31);
+    font-weight: bold;
+}
+
+#menubar li :hover {
+    background: #36ac4d;
+    color: rgb(31, 31, 31);
+    
+}
+
+#menubar .navbar-brand {
+    color: #f0f0f0;
+}
+
+#menubar li a {
+    color: #f0f0f0;
+}
+
+#container-title {
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: rgb(31, 31, 31);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.container {
+    background: red;
+    margin-top: 30px;
+}
+
+.canvas-holder {
+    float: left;
+}
+
+.chart-info {
+    width: 400px;
+    height: 400px;
+    background: green;
+    margin-bottom: 25px;
+}
+
+.chart-details {
+    width: 400px;
+    height: 300px;
+    background: blue;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.fill-out-holder {
+    width: 740px;
+    height: 700px;
+    background: pink;
+    margin-bottom: 25px;
+    float: left;
+}
