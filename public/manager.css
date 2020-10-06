@@ -99,3 +99,11 @@ body {
     color: rgb(31, 31, 31);
     font-family: "Verdana", Geneva, sans-serif;
 }
+
+.currencyinput {
+    border: 1px inset #ccc;
+}
+
+.currencyinput input {
+    border: 0;
+}
