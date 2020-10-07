@@ -1,0 +1,23 @@
+{
+  "name": "json-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/btror/budget-website.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/btror/budget-website.io/issues"
+  },
+  "homepage": "https://github.com/btror/budget-website.io#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

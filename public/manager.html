@@ -59,12 +59,20 @@
             <label>Monthly Salary</label>
             <br />
             <input
-              type="number" placeholder="$0.00" id="monthly-salary" onchange="newData(1)"
+              type="number"
+              placeholder="$0.00"
+              id="monthly-salary"
+              onchange="newData(1)"
             />
             <br />
             <label>Other</label>
             <br />
-            <input type="number" placeholder="$0.00" id="income-other" onchange="newData(2)" />
+            <input
+              type="number"
+              placeholder="$0.00"
+              id="income-other"
+              onchange="newData(2)"
+            />
             <br />
           </div>
 
@@ -72,23 +80,48 @@
             <h3>Expenses</h3>
             <label>House Payment</label>
             <br />
-            <input type="number" placeholder="$0.00" id="house-payment" onchange="newData(3)" />
+            <input
+              type="number"
+              placeholder="$0.00"
+              id="house-payment"
+              onchange="newData(3)"
+            />
             <br />
             <label>Transportation Payment</label>
             <br />
-            <input type="number" placeholder="$0.00" id="transportation-payment" onchange="newData(4)"/>
+            <input
+              type="number"
+              placeholder="$0.00"
+              id="transportation-payment"
+              onchange="newData(4)"
+            />
             <br />
             <label>School Tuition</label>
             <br />
-            <input type="number" placeholder="$0.00" id="school-tuition" onchange="newData(5)"/>
+            <input
+              type="number"
+              placeholder="$0.00"
+              id="school-tuition"
+              onchange="newData(5)"
+            />
             <br />
             <label>Entertainment</label>
             <br />
-            <input type="number" placeholder="$0.00" id="entertainment" onchange="newData(6)"/>
+            <input
+              type="number"
+              placeholder="$0.00"
+              id="entertainment"
+              onchange="newData(6)"
+            />
             <br />
             <label>Other</label>
             <br />
-            <input type="number" placeholder="$0.00" id="expenses-other" onchange="newData(7)"/>
+            <input
+              type="number"
+              placeholder="$0.00"
+              id="expenses-other"
+              onchange="newData(7)"
+            />
             <br />
           </div>
 
@@ -96,19 +129,39 @@
             <h3>Savings</h3>
             <label>Emergency Fund</label>
             <br />
-            <input type="number" placeholder="$0.00" id="emergency-fund" onchange="newData(8)"/>
+            <input
+              type="number"
+              placeholder="$0.00"
+              id="emergency-fund"
+              onchange="newData(8)"
+            />
             <br />
             <label>Investments</label>
             <br />
-            <input type="number" placeholder="$0.00" id="investments" onchange="newData(9)"/>
+            <input
+              type="number"
+              placeholder="$0.00"
+              id="investments"
+              onchange="newData(9)"
+            />
             <br />
             <label>Retirement</label>
             <br />
-            <input type="number" placeholder="$0.00" id="retirement" onchange="newData(10)"/>
+            <input
+              type="number"
+              placeholder="$0.00"
+              id="retirement"
+              onchange="newData(10)"
+            />
             <br />
             <label>Other</label>
             <br />
-            <input type="number" placeholder="$0.00" id="savings-other" onchange="newData(11)"/>
+            <input
+              type="number"
+              placeholder="$0.00"
+              id="savings-other"
+              onchange="newData(11)"
+            />
             <br />
           </div>
         </div>
@@ -127,11 +180,10 @@
     ></script>
 
     <script>
-
       var dataSource = {
         datasets: [
           {
-            data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+            data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             backgroundColor: [
               "#28bd4f",
               "#44db6c",
@@ -162,75 +214,82 @@
         ],
       };
 
+      var ctx = document.getElementById("myChart").getContext("2d");
+      var myPieChart = new Chart(ctx, {
+        type: "pie",
+        data: dataSource,
+        options: {
+          legend: {
+            labels: {
+              fontColor: "#f0f0f0",
+            },
+          },
+        },
+      });
+
       function newData(num) {
-        // var x = document.getElementById("monthly-salary").value;
-        // console.log(x);
         var x;
         switch (num) {
           case 1:
             x = document.getElementById("monthly-salary").value;
             console.log(x);
-          break;
+            dataSource.datasets[0].data[0] = x;
+            break;
           case 2:
             x = document.getElementById("income-other").value;
             console.log(x);
-          break;
+            dataSource.datasets[0].data[1] = x;
+            break;
           case 3:
             x = document.getElementById("house-payment").value;
             console.log(x);
-          break;
+            dataSource.datasets[0].data[2] = x;
+            break;
           case 4:
             x = document.getElementById("transportation-payment").value;
             console.log(x);
-          break;
+            dataSource.datasets[0].data[3] = x;
+            break;
           case 5:
             x = document.getElementById("school-tuition").value;
             console.log(x);
-          break;
+            dataSource.datasets[0].data[4] = x;
+            break;
           case 6:
             x = document.getElementById("entertainment").value;
             console.log(x);
-          break;
+            dataSource.datasets[0].data[5] = x;
+            break;
           case 7:
             x = document.getElementById("expenses-other").value;
             console.log(x);
-          break;
+            dataSource.datasets[0].data[6] = x;
+            break;
           case 8:
             x = document.getElementById("emergency-fund").value;
             console.log(x);
-          break;
+            dataSource.datasets[0].data[7] = x;
+            break;
           case 9:
             x = document.getElementById("investments").value;
             console.log(x);
-          break;
+            dataSource.datasets[0].data[8] = x;
+            break;
           case 10:
             x = document.getElementById("retirement").value;
             console.log(x);
-          break;
+            dataSource.datasets[0].data[9] = x;
+            break;
           case 11:
             x = document.getElementById("savings-other").value;
             console.log(x);
-          break;
+            dataSource.datasets[0].data[10] = x;
+            break;
         }
-        
+        myPieChart.update();
       }
 
-      function createChart() {
-        var ctx = document.getElementById("myChart").getContext("2d");
-        var myPieChart = new Chart(ctx, {
-          type: "pie",
-          data: dataSource,
-          options: {
-            legend: {
-              labels: {
-                fontColor: "#f0f0f0",
-              },
-            },
-          },
-        });
-      }
-
-      createChart();
+      //createChart();
 
       // function getBudget() {
       //     axios.get('http://localhost:3000/budget')
