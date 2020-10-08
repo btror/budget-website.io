@@ -64,6 +64,13 @@ body {
 
 .chart-details h4 {
     color: #f0f0f0;
+    
+}
+
+.chart-details p {
+    color: #f0f0f0;
+    
+    float: right;
 }
 
 .fill-out-holder {

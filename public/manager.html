@@ -29,9 +29,7 @@
         </div>
         <ul class="nav navbar-nav">
           <li><a href="index.html">home</a></li>
-          <li><a href="about.html">about</a></li>
           <li class="active"><a href="manager.html">manager</a></li>
-          <li><a href="contact.html">contact</a></li>
         </ul>
       </div>
     </nav>
@@ -41,11 +39,26 @@
       <div class="canvas-holder">
         <div class="chart-details">
           <hr style="width: 100%" />
-          <h4>Monthly Income:</h4>
+          <h4>
+            Monthly Income:
+            <p id="income-total">
+              $0
+            </p>
+          </h4>
           <hr style="width: 100%" />
-          <h4>Monthly Expenses:</h4>
+          <h4>
+            Monthly Expenses:
+            <p id="expenses-total">
+              $0
+            </p>
+          </h4>
           <hr style="width: 100%" />
-          <h4>Savings:</h4>
+          <h4>
+            Savings:
+            <p id="savings-total">
+              $0
+            </p>
+          </h4>
           <hr style="width: 100%" />
         </div>
         <div class="chart-info">
@@ -214,8 +227,20 @@
         ],
       };
 
+      var tempDataSource = {
+        datasets: [
+          {
+            data: [1],
+            backgroundColor: ["#28bd4f"],
+          },
+        ],
+        labels: ["Empty Chart"],
+      };
+
+      var empty;
+      var myPieChart;
       var ctx = document.getElementById("myChart").getContext("2d");
-      var myPieChart = new Chart(ctx, {
+      myPieChart = new Chart(ctx, {
         type: "pie",
         data: dataSource,
         options: {
@@ -227,8 +252,13 @@
         },
       });
 
+      // var incomeAmount = document.getElementById('income-total').innerHTML;
+      
       function newData(num) {
         var x;
+        var incomeNum = +0;
+        var expenseNum = +0;
+        var savingNum = +0;
         switch (num) {
           case 1:
             x = document.getElementById("monthly-salary").value;
@@ -286,23 +316,28 @@
             dataSource.datasets[0].data[10] = x;
             break;
         }
+
+        // get income total
+        for (var i = 0; i < 2; i++) {
+          incomeNum += +dataSource.datasets[0].data[i];
+        }
+        document.getElementById("income-total").innerHTML = "$" + incomeNum;
+
+        // get expense total
+        for (var i = 2; i < 7; i++) {
+          expenseNum += +dataSource.datasets[0].data[i];
+        }
+        document.getElementById("expenses-total").innerHTML = "$" + expenseNum;
+
+        // get savings total
+        for (var i = 7; i < 11; i++) {
+          savingNum += +dataSource.datasets[0].data[i];
+        }
+        document.getElementById("savings-total").innerHTML = "$" + savingNum;
+
         myPieChart.update();
       }
 
-      //createChart();
-
-      // function getBudget() {
-      //     axios.get('http://localhost:3000/budget')
-      //     .then(function (res) {
-      //         for (var i = 0; i < res.data.myBudget.length; i++) {
-      //             dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
-      //             dataSource.labels[i] = res.data.myBudget[i].title;
-      //             createChart();
-      //         }
-      //     });
-      // }
-
-      //getBudget();
     </script>
   </body>
 </html>
